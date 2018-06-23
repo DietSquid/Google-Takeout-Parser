@@ -45,6 +45,7 @@ def parsefile(filename):
     print("parsing file...")
     if sys.platform == "win32" or sys.platform == "win64":                      #the new line character doesn't seem to work when writing to a file on windows, so the carriage return is replaced with an "@"
         crn = '\n'
+        TODO clean up unnecessary programming
         # print("WARNING: Windows system detected.",
         # " New line character has been replaced with {} symbol" .format(crn))    #this just makes it easy to go into the file after the fact and replace all instances of it with a line break in any txt editors
         # print("You'll need to go into the output.txt after it's finished parsing",
@@ -55,8 +56,6 @@ def parsefile(filename):
     f.close()                                                                   #close the file, since we don't need it anymore
     searches = (sp.findAll("div",{"class":"mdl-grid"},
                                   {"class":"content-cell mdl-cell mdl-cell--6-col mdl-typography--body-1"}))                                                #only keep href links, we don't need anything else
-    # for link in (sp.findAll("a")):                                            #TODO: Implement a system for also extracting timestamps
-    #     print(link.get("href"))
     print("document parsed! Writing queries to file...")
     writefile(searches, crn)                                                    #passes the links and the carriage return character to the write function
 
@@ -87,17 +86,9 @@ def writefile(parse, retrn):
             time = entry.split("<br/>")[2]
             time = time.split("</div>")[0]
             with open("output.txt", 'a', encoding="utf-8") as fle:              #create the output file if it doesn't exist and prepare to append to it
-                # if "</div>" in linkk:
-                #     fle.write("WHOOPS! {}\n" .format(entry))
-                #     print("Oopsie Daisy!")
-                #     bad_vars += 1
                 if "://www.google.com/search?q=" in entry:
                     try:
                         fle.write("{}:   {}{}" .format(time, linkk, retrn))
-        # if "://www.google.com/search?q=" in item.get("href"):                   #only include links that are from the google search, since this list includes links you click on from a google search, which is kind of useless
-        #     with open("output.txt", 'a', encoding="utf-8") as fle:              #create the output file if it doesn't exist and prepare to append to it
-        #         try:
-        #             fle.write("{}{}" .format(item.text, retrn))                 #write the search query
                     except UnicodeEncodeError:                                      #exception to catch Encoding Errors
                         print("WARNING: Unicode Encoding Error in value \"{}\"." .format(item.text))
                         if encodeerrror == False:                                   #I'm pretty sure this issue has been fixed already, but just in case, this catch will keep the program from crashing when it encounters a weird character
