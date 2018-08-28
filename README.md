@@ -1,5 +1,7 @@
 VERSION 0.4:
+
 -corrected improper documentation format
+
 -cleaned out obselete code
    
    
@@ -23,4 +25,4 @@ GoogleParser.py seems to run fine on both Windows and Linux.
 # Issues
 - Queries with characters not contained in standard UTF-8 encoding seem to create issues in the parser when writing it to file. Until the issue can be better addressed, the parser will attempt to convert the text first, but if it can't, it will ignore the query and notify you of an error.
 - ~~The file has sufficient documentation, but the comments are not formatted in the proper method, which makes the reader constantly have to scroll from side to side to read it. This will be addressed soon.~~
-- The code needs to be cleaned up somewhat, and the commented out debug sections need to be segregated from the rest of the program or removed entirely.
+- ~~The code needs to be cleaned up somewhat, and the commented out debug sections need to be segregated from the rest of the program or removed entirely.~~
