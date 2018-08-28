@@ -1,6 +1,6 @@
 VERSION 0.4:
-   -corrected improper documentation format
-   -cleaned out obselete code
+-corrected improper documentation format
+-cleaned out obselete code
    
    
  Google-Takeout-Parser
