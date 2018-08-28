@@ -5,7 +5,7 @@ VERSION 0.4:
 -cleaned out obselete code
    
    
- Google-Takeout-Parser
+# Google-Takeout-Parser
 A python program for extracting google searches from your google takeout files.
 
 When I tried to look at my google search history from the past seven-ish years, I found that I had over 40 thousand entries to look through, and somehow, having 40 thousand individual entities in a single HTML file is not the most stable way to view data. So in order to actually be able to view my search history, I coded a quick parser that will extract the search queries and write them to a txt file that's a lot easier to navigate.
