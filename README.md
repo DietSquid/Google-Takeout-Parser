@@ -12,8 +12,7 @@ When I tried to look at my google search history from the past seven-ish years, 
 
 # Requirements
 Google Takeout Parser requires only two repositiries that aren't included by default in python, both of which are easily available through pip:
-BeautifulSoup 4
-pathlib
+```BeautifulSoup 4``` and ```pathlib```
 
 # Use
 GoogleParser.py can be run by simply double-clicking on it, or running it in a shell. In order for it to detect your "MyActivity" file, it needs to be located in the same directory as the program. The program will detect any html files in the directory and check to see if it's the correct file, so don't worry about keeping the filename the same.
